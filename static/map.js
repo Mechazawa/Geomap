@@ -52,7 +52,7 @@ function updateMap() {
                 map: map,
                 title: (value["metro_code"] ? value["metro_code"] + ", " : "") + value["country"]
             }));
-            l.push(
+            lines.push(
                 new google.maps.Polyline({
                     path: [ll, new google.maps.LatLng(data["server"]["latitude"], data["server"]["longitude"])],
                     strokeColor: '#FF0000',
@@ -62,15 +62,6 @@ function updateMap() {
                 })
             );
         });
-        lines = new google.maps.Polyline({
-            path: l,
-            strokeColor: '#FF0000',
-            strokeOpacity: 1.0,
-            strokeWeight: 2
-        });
-
-        console.log(markers);
-
     });
 }
 
