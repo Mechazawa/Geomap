@@ -9,6 +9,8 @@ function updateMap() {
         var cords = [];
         for (var i = 0; i < markers.length; i++) {
             markers[i].setMap(null);
+        }
+        for(var i = 0; i < lines.length; i++) {
             lines[i].setMap(null);
         }
         lines = [];
