@@ -24,7 +24,7 @@ def json_connections():
 
 def connections():
     ns = subprocess.Popen(["netstat", "-an"], stdout=subprocess.PIPE).communicate()[0]
-    ns = '\n'.join(x for x in ns.split('\n') if 'TIME_WAIT' not in x)
+    ns = '\n'.join(x for x in ns.split('\n') if 'ESTABLISHED' not in x)
     ips = ipv4.findall(ns)
     ips = list(set(ips))  # uniq
     return [x for x in ips if x.split('.')[0] not in ['0', '127', '10', '168']]
